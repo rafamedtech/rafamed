@@ -24,7 +24,7 @@ definePageMeta({
 
       <div class="m-4 flex flex-col items-center justify-evenly gap-8 py-6 md:flex-row">
         <figure class="md:w-1/3">
-          <img src="@/assets/image/contact.png" alt="" />
+          <!-- <img src="@/assets/image/contact.png" alt="" /> -->
         </figure>
         <ContactForm class="md:w-2/5" />
       </div>

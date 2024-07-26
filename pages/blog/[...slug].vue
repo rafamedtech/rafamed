@@ -33,7 +33,7 @@ definePageMeta({
           </template>
           <template #not-found>
             <div class="hero-pattern grid min-h-[75vh] place-items-center">
-              <img src="@/static/notfound.png" alt="" class="mx-auto h-[500px]" />
+              <!-- <img src="@/static/notfound.png" alt="" class="mx-auto h-[500px]" /> -->
               <h1 class="font-base mb-4 text-center text-3xl text-accent">Post not found</h1>
               <NuxtLink
                 to="/"

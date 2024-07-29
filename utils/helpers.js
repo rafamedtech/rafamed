@@ -1,5 +1,3 @@
-export const avatar = 'https://res.cloudinary.com/rafamed-dev/image/upload/v1717713407/avatar_nbru5d.png';
-
 export const services = [
   {
     id: 1,

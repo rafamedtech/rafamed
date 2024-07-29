@@ -1,102 +1,44 @@
 <template>
   <main>
     <UContainer>
-      <section class="min-h-[60vh] flex items-center md:justify-between w-full flex-col md:flex-row gap-4">
-        <section class="md:p-14 lg:p-16 h-full flex-1">
-          <h1 class="text-5xl font-bold sm:text-7xl">
-            Innovative Software <span class="text-primary">Solutions</span>
-          </h1>
-          <p class="text-lg mt-4">Crafting custom software to elevate your business</p>
-        </section>
-
-        <section class="flex justify-center md:justify-end flex-1 md:p-14 lg:p-16 md:pr-4">
-          <img :src="avatar" alt="Avatar" class="w-56 h-56 md:h-72 md:w-72 lg:w-96 lg:h-96 object-cover" />
-        </section>
-      </section>
+      <TheHero />
 
       <UDivider />
 
-      <PageSection title="About me" type="column">
+      <PageSection title="Embracing Modern technologies" type="column">
         <p class="text-lg">
-          Hi, I’m Rafael, a passionate software developer dedicated to bringing your ideas to life through cutting-edge
-          technology and innovative solutions. <br />
-          I also write about modern technologies and how you can use them in real-life projects.
+          The goal of this place is to be the ultimate resource for web developers seeking to learn and refine their
+          skills using technologies around the
+          <span class="text-primary font-bold">Vue</span> and
+          <span class="text-yellow-400 font-bold">UnJS</span> ecosystems.
         </p>
+        <!-- <p class="text-lg pt-4">
+          My goal is to provide a space where anyone can find detailed tutorials, practical guides, and other assets
+          that make the process of creating robust and scalable web applications easier.
+        </p> -->
       </PageSection>
 
-      <PageSection title="What do I offer?" type="grid">
-        <UCard v-for="{ id, title, description, icon } in services" :key="id">
-          <template #header>
-            <div class="flex gap-2 w-full items-center">
-              <Icon :name="icon" class="text-primary text-4xl" />
-              <h3 class="font-bold">{{ title }}</h3>
-            </div>
-          </template>
+      <!-- Guides and tutorials -->
+      <PageSection title="Guides and tutorials" type="column"> Guides and tutorials </PageSection>
 
-          <p>{{ description }}</p>
-        </UCard>
+      <!-- Digital products -->
+      <PageSection title="Digital products" type="column"> Digital products </PageSection>
+
+      <!-- Blog -->
+      <PageSection title="Blog" type="column"> Blog </PageSection>
+      <!-- Contact -->
+
+      <PageSection title="Get in touch" type="column">
+        <p class="text-lg">
+          I’m always open to new projects and collaborations. Let’s work together to create something amazing.
+        </p>
+        <div class="flex justify-center pt-4">
+          <UButton size="xl" icon="i-heroicons-rocket-launch"> Contact me </UButton>
+        </div>
       </PageSection>
-
-      <PageSection title="Here's some of my work" type="grid">
-        <UCard v-for="{ id, title, description, stack } in projects" :key="id">
-          <template #footer>
-            <div class="flex gap-2 w-full flex-col">
-              <h3 class="font-bold">{{ title }}</h3>
-              <div class="flex justify-between gap-2">
-                <UBadge v-for="tec in stack" :key="tec" color="primary" variant="outline">{{ tec }}</UBadge>
-              </div>
-            </div>
-          </template>
-
-          <p>{{ description }}</p>
-        </UCard>
-      </PageSection>
-
-      <section>
-        <h2 class="text-4xl font-bold sm:text-5xl">Recent blog posts</h2>
-        <section class="grid grid-cols-1 max-w-lg mx-auto gap-4 py-8">
-          <UCard>
-            <template #header>
-              <h3 class="font-bold">Blog post title</h3>
-            </template>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam, voluptates.</p>
-          </UCard>
-          <UCard>
-            <template #header>
-              <h3 class="font-bold">Blog post title</h3>
-            </template>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam, voluptates.</p>
-          </UCard>
-          <UCard>
-            <template #header>
-              <h3 class="font-bold">Blog post title</h3>
-            </template>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam, voluptates.</p>
-          </UCard>
-          <UCard>
-            <template #header>
-              <h3 class="font-bold">Blog post title</h3>
-            </template>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates. Quisquam, voluptates.</p>
-          </UCard>
-        </section>
-      </section>
-
-      <section class="py-8">
-        <h2 class="text-4xl font-bold sm:text-5xl">Get in touch</h2>
-        <section class="py-8 max-w-lg mx-auto">
-          <p class="text-lg">
-            I’m always open to new projects and collaborations. Let’s work together to create something amazing.
-          </p>
-          <UButton color="primary" variant="outline" class="mt-4"> Contact me </UButton>
-        </section>
-      </section>
     </UContainer>
 
     <!-- main website footer -->
+    <TheFooter />
   </main>
 </template>

@@ -11,16 +11,13 @@ definePageMeta({
 </script>
 
 <template>
-  <main class="hero-pattern container prose py-24 px-5 pt-36 md:pt-24 lg:max-w-none">
-    <div
-      class="container mt-4 prose-headings:text-accent prose-h3:text-primary prose-p:text-lg prose-p:text-light prose-a:text-accent prose-blockquote:bg-[#1a1a1a] prose-blockquote:p-1 prose-strong:text-accent prose-em:text-primary prose-code:text-light"
+  <main class="hero-pattern container prose py-8 lg:max-w-none">
+    <UContainer
+      class="mt-4 prose-headings:text-primary prose-h3:text-primary prose-p:text-lg dark:prose-p:text-gray-200 prose-a:text-primary dark:prose-blockquote:bg-[#1a1a1a] prose-blockquote:p-1 prose-strong:text-primary prose-em:text-primary prose-code:text-light"
     >
-      <button
-        @click="$router.push('/blog')"
-        class="flex items-center gap-2 rounded-lg border-0 bg-accent py-2 px-2 text-base text-black hover:bg-accent/75 focus:outline-none md:mt-0 md:inline-flex md:px-6"
-      >
+      <UButton size="xl" @click="navigateTo('/blog')">
         <Icon name="heroicons-solid:arrow-left" /> Back to Blog
-      </button>
+      </UButton>
 
       <!-- Post content -->
       <div class="lg:px-32">
@@ -44,13 +41,15 @@ definePageMeta({
           </template>
         </ContentDoc>
       </div>
-    </div>
 
-    <!-- Related posts -->
-    <section v-if="similarPosts?.length" class="container">
-      <h2 class="text-center text-3xl font-medium text-accent sm:text-4xl">Related posts</h2>
+      <!-- Related posts -->
+      <section v-if="similarPosts?.length" class="container">
+        <h2 class="text-center text-3xl font-medium dark:text-gray-200 sm:text-4xl">Related posts</h2>
 
-      <PostCard v-for="post in similarPosts" :post="post" :key="post._id" />
-    </section>
+        <section class="grid gap-4">
+          <PostCard v-for="post in similarPosts" :post="post" :key="post._id" />
+        </section>
+      </section>
+    </UContainer>
   </main>
 </template>

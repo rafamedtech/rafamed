@@ -37,8 +37,5 @@
         </div>
       </PageSection>
     </UContainer>
-
-    <!-- main website footer -->
-    <TheFooter />
   </main>
 </template>

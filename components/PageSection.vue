@@ -1,9 +1,9 @@
 <script setup lang="ts">
 interface Props {
   title: string;
-  type: 'column' | 'grid';
+  type?: 'column' | 'grid';
 }
-const { title, type } = defineProps<Props>();
+const { title, type = 'column' } = defineProps<Props>();
 </script>
 
 <template>

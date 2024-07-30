@@ -7,5 +7,12 @@ export default defineNuxtConfig({
     '/': { prerender: true },
   },
 
+  content: {
+    highlight: {
+      theme: 'dracula',
+      preload: ['python', 'javascript', 'css', 'html', 'bash', 'vue'],
+    },
+  },
+
   compatibilityDate: '2024-07-26',
 });

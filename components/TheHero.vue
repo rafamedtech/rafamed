@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <section
     class="min-h-[80vh] lg:max-h-[60vh] flex items-center md:justify-between w-full flex-col-reverse lg:flex-row text-center lg:text-left gap-4"

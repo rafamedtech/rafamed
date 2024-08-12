@@ -11,13 +11,6 @@ useHead({
     },
   ],
 });
-
-definePageMeta({
-  pageTransition: {
-    name: 'fade',
-    mode: 'out-in',
-  },
-});
 </script>
 
 <template>

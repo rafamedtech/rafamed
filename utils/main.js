@@ -2,9 +2,9 @@ export const avatar = 'https://res.cloudinary.com/rafamed-dev/image/upload/v1717
 
 export const navLinks = [
   {
-    label: 'Projects',
+    label: 'Templates',
     icon: 'i-heroicons-briefcase',
-    to: '/projects',
+    to: '/templates',
   },
   {
     label: 'Blog',
@@ -34,3 +34,46 @@ export const socialLinks = [
 export const mainTitle = 'Rafamed';
 
 export const badge = 'Dev';
+
+export const techStack = [
+  {
+    id: 1,
+    title: 'Vue 3',
+    icon: 'logos:vue',
+  },
+  {
+    id: 2,
+    title: 'Nuxt 3',
+    icon: 'logos:nuxt-icon',
+  },
+  {
+    id: 3,
+    title: 'Vite',
+    icon: 'logos:vitejs',
+  },
+  {
+    id: 4,
+    title: 'Tailwind CSS',
+    icon: 'logos:tailwindcss-icon',
+  },
+  {
+    id: 5,
+    title: 'TypeScript',
+    icon: 'logos:typescript-icon',
+  },
+  {
+    id: 6,
+    title: 'UnJS',
+    icon: 'simple-icons:unjs',
+  },
+  {
+    id: 7,
+    title: 'Prisma',
+    icon: 'logos:prisma',
+  },
+  {
+    id: 8,
+    title: 'PostgreSQL',
+    icon: 'logos:postgresql',
+  },
+];

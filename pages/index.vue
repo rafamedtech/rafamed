@@ -1,3 +1,9 @@
+<script setup lang="ts">
+// import type { ParsedContent } from '@nuxt/content';
+// const blogPosts = await queryContent<ParsedContent>('/blog').limit(3).sort({ id: -1 }).find();
+const blogPosts = await queryContent('/blog').limit(3).sort({ id: -1 }).find();
+</script>
+
 <template>
   <main>
     <UContainer>
@@ -12,20 +18,34 @@
           <span class="text-primary font-bold">Vue</span> and
           <span class="text-yellow-400 font-bold">UnJS</span> ecosystems.
         </p>
-        <!-- <p class="text-lg pt-4">
-          My goal is to provide a space where anyone can find detailed tutorials, practical guides, and other assets
-          that make the process of creating robust and scalable web applications easier.
-        </p> -->
       </PageSection>
 
       <!-- Guides and tutorials -->
-      <PageSection title="Guides and tutorials" type="column"> Guides and tutorials </PageSection>
+      <PageSection title="This is the stack I use" type="grid" :columns="3">
+        <UCard
+          v-for="{ id, title, icon } in techStack"
+          :key="id"
+          class="hover:shadow hover:shadow-green-500 transition group"
+        >
+          <div class="flex items-center gap-4">
+            <Icon :name="icon" size="40" />
+            <h3 class="text-lg font-bold group-hover:text-primary">{{ title }}</h3>
+          </div>
+        </UCard>
+      </PageSection>
 
-      <!-- Digital products -->
-      <PageSection title="Digital products" type="column"> Digital products </PageSection>
+      <PageSection title="Latest templates" type="column">
+        <div>
+          <UCard> Work in progress </UCard>
+        </div>
+      </PageSection>
 
       <!-- Blog -->
-      <PageSection title="Blog" type="column"> Blog </PageSection>
+      <PageSection title="Blog" type="column">
+        <div class="flex flex-wrap py-6">
+          <PostCard v-for="(post, index) in blogPosts" :key="index" :post="post" />
+        </div>
+      </PageSection>
       <!-- Contact -->
 
       <PageSection title="Get in touch" type="column">

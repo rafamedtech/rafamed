@@ -9,11 +9,11 @@ const { title, type = 'column', columns } = defineProps<Props>();
 
 <template>
   <section class="py-8 lg:py-16 flex flex-col items-center">
-    <h2 class="text-3xl font-bold lg:text-5xl text-center">{{ title }}</h2>
+    <h2 class="text-3xl font-bold lg:text-5xl text-primary text-center">{{ title }}</h2>
     <section
       class="py-8"
       :class="{
-        'max-w-xl': type === 'column',
+        'max-w-4xl flex flex-col gap-4': type === 'column',
         'grid gap-4': type === 'grid',
         'grid-cols-4': columns === 4,
         'grid-cols-3': columns === 3,

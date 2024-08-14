@@ -1,19 +1,12 @@
 <script setup lang="ts">
 // Similar posts
 const { similarPosts } = await usePost();
-
-definePageMeta({
-  pageTransition: {
-    name: 'fade',
-    mode: 'out-in',
-  },
-});
 </script>
 
 <template>
   <main class="hero-pattern container prose py-8 lg:max-w-none">
     <UContainer
-      class="mt-4 prose-headings:text-primary prose-h3:text-primary prose-p:text-lg dark:prose-p:text-gray-200 prose-a:text-primary dark:prose-blockquote:bg-[#1a1a1a] prose-blockquote:p-1 prose-strong:text-primary prose-em:text-primary prose-code:text-light"
+      class="mt-4 prose-headings:text-primary prose-h3:text-primary prose-p:text-lg dark:prose-p:text-gray-200 prose-a:text-primary dark:prose-blockquote:bg-[#1a1a1a] prose-blockquote:p-1 prose-strong:text-primary prose-em:text-primary"
     >
       <UButton size="xl" @click="navigateTo('/blog')">
         <Icon name="heroicons-solid:arrow-left" /> Back to Blog
@@ -41,10 +34,12 @@ definePageMeta({
           </template>
         </ContentDoc>
       </div>
+    </UContainer>
 
+    <UContainer>
       <!-- Related posts -->
-      <section v-if="similarPosts?.length" class="container">
-        <h2 class="text-center text-3xl font-medium dark:text-gray-200 sm:text-4xl">Related posts</h2>
+      <section v-if="similarPosts?.length" class="lg:px-32">
+        <h2 class="text-center text-3xl font-medium text-primary sm:text-4xl">Related posts</h2>
 
         <section class="grid gap-4">
           <PostCard v-for="post in similarPosts" :post="post" :key="post._id" />

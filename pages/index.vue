@@ -1,7 +1,6 @@
 <script setup lang="ts">
-// import type { ParsedContent } from '@nuxt/content';
-// const blogPosts = await queryContent<ParsedContent>('/blog').limit(3).sort({ id: -1 }).find();
-const blogPosts = await queryContent('/blog').limit(3).sort({ id: -1 }).find();
+const { latestPosts } = await usePost();
+// const latestPosts = await queryContent('/blog').limit(3).sort({ id: -1 }).find();
 </script>
 
 <template>
@@ -25,7 +24,7 @@ const blogPosts = await queryContent('/blog').limit(3).sort({ id: -1 }).find();
         <UCard
           v-for="{ id, title, icon } in techStack"
           :key="id"
-          class="hover:shadow hover:shadow-green-500 transition group"
+          class="hover:shadow hover:shadow-green-500 transition-all group hover:scale-[.96]"
         >
           <div class="flex items-center gap-4">
             <Icon :name="icon" size="40" />
@@ -41,10 +40,8 @@ const blogPosts = await queryContent('/blog').limit(3).sort({ id: -1 }).find();
       </PageSection>
 
       <!-- Blog -->
-      <PageSection title="Blog" type="column">
-        <div class="flex flex-wrap py-6">
-          <PostCard v-for="(post, index) in blogPosts" :key="index" :post="post" />
-        </div>
+      <PageSection title="Latest blogposts" type="column">
+        <PostCard v-for="(post, index) in latestPosts" :key="index" :post="post" />
       </PageSection>
       <!-- Contact -->
 

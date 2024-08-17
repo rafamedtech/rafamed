@@ -1,6 +1,36 @@
 <script setup lang="ts">
+import menuApp from '@/assets/img/menu-app.png';
+import invoiceApp from '@/assets/img/invoice-app.png';
+import mealpreps from '@/assets/img/mealpreps.png';
+
 const { latestPosts } = await usePost();
-// const latestPosts = await queryContent('/blog').limit(3).sort({ id: -1 }).find();
+
+const templates = [
+  {
+    id: 1,
+    title: 'Restaurant menu app',
+    description: 'A simple restaurant menu app built with Vue 3 and Vite',
+    stack: ['Vue 3', 'Vite'],
+    images: [menuApp],
+    url: '/templates/vue3-vite',
+  },
+  {
+    id: 2,
+    title: 'Invoice app',
+    description: 'A simple invoice app built with Vue 3 and Vite',
+    stack: ['Vue 3', 'Vite', 'TailwindCSS'],
+    images: [invoiceApp],
+    url: '/templates/vue3-vite-tailwindcss',
+  },
+  {
+    id: 3,
+    title: 'Vue 3 + Vite + TailwindCSS + TypeScript',
+    description: 'A simple Vue 3 + Vite + TailwindCSS + TypeScript template',
+    stack: ['Vue 3', 'Vite', 'TailwindCSS', 'TypeScript'],
+    images: [mealpreps],
+    url: '/templates/vue3-vite-tailwindcss-typescript',
+  },
+];
 </script>
 
 <template>
@@ -33,15 +63,42 @@ const { latestPosts } = await usePost();
         </UCard>
       </PageSection>
 
-      <PageSection title="Latest templates" type="column">
-        <div>
-          <UCard> Work in progress </UCard>
-        </div>
-      </PageSection>
-
       <!-- Blog -->
       <PageSection title="Latest blogposts" type="column">
         <PostCard v-for="(post, index) in latestPosts" :key="index" :post="post" />
+
+        <section class="flex justify-center pt-4">
+          <UButton size="xl" variant="ghost" icon="i-heroicons-arrow-right" trailing to="/blog">
+            Explore more posts
+          </UButton>
+        </section>
+      </PageSection>
+
+      <!-- Templates -->
+      <PageSection title="Latest templates" more="/templates" type="grid" :columns="3">
+        <UCard v-for="template in templates">
+          <template #header>
+            <h3 class="font-bold">{{ template.title }}</h3>
+          </template>
+
+          <section class="flex flex-col gap-4">
+            <img :src="template.images[0]" alt="" class="rounded-lg" />
+            <p>{{ template.description }}</p>
+            <section class="flex justify-center gap-4">
+              <UButton size="sm" icon="i-heroicons-code-bracket" trailing :to="template.url"> View source </UButton>
+
+              <UButton size="sm" icon="i-heroicons-rocket-launch" trailing :to="template.url"> Go to demo </UButton>
+            </section>
+          </section>
+
+          <template #footer>
+            <div class="flex gap-2 flex-wrap justify-center">
+              <UBadge v-for="stack in template.stack" :key="stack" size="sm" variant="outline" color="gray">
+                {{ stack }}
+              </UBadge>
+            </div>
+          </template>
+        </UCard>
       </PageSection>
       <!-- Contact -->
 

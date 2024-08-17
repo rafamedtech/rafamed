@@ -3,8 +3,9 @@ interface Props {
   title: string;
   type?: 'column' | 'grid';
   columns?: 1 | 2 | 3 | 4;
+  more?: string;
 }
-const { title, type = 'column', columns } = defineProps<Props>();
+const { title, type = 'column', columns, more } = defineProps<Props>();
 </script>
 
 <template>
@@ -22,5 +23,8 @@ const { title, type = 'column', columns } = defineProps<Props>();
     >
       <slot />
     </section>
+    <UButton v-if="more" :to="more" size="xl" trailing variant="ghost" icon="i-heroicons-arrow-right">
+      See more
+    </UButton>
   </section>
 </template>

@@ -4,19 +4,17 @@ const { similarPosts } = await usePost();
 </script>
 
 <template>
-  <main class="hero-pattern container prose py-8 lg:max-w-none">
-    <UContainer
-      class="mt-4 prose-headings:text-primary prose-h3:text-primary prose-p:text-lg dark:prose-p:text-gray-200 prose-a:text-primary dark:prose-blockquote:bg-[#1a1a1a] prose-blockquote:p-1 prose-strong:text-primary prose-em:text-primary"
-    >
-      <UButton size="xl" @click="navigateTo('/blog')">
-        <Icon name="heroicons-solid:arrow-left" /> Back to Blog
-      </UButton>
+  <main class="prose py-8 lg:max-w-none">
+    <UContainer class="mt-4">
+      <UButton size="xl" to="/blog" icon="i-heroicons-solid-arrow-left" class="no-underline"> Back to Blog </UButton>
 
       <!-- Post content -->
-      <div class="lg:px-32">
+      <div
+        class="lg:px-32 prose-headings:text-primary prose-h3:text-primary prose-p:text-lg dark:prose-p:text-gray-200 prose-a:text-primary dark:prose-blockquote:bg-[#1a1a1a] prose-blockquote:p-1 prose-strong:text-primary prose-em:text-primary"
+      >
         <ContentDoc>
           <template v-slot="{ doc }">
-            <img :src="doc.img" alt="" class="mx-auto rounded-2xl" :class="{ 'md:h-[500px]': doc.img }" />
+            <img :src="doc.img" alt="" class="mx-auto rounded-2xl shadow" :class="{ 'md:h-[500px]': doc.img }" />
             <h1>{{ doc.title }}</h1>
 
             <ContentRendererMarkdown :value="doc" />

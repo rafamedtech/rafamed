@@ -6,7 +6,7 @@ const { similarPosts } = await usePost();
 <template>
   <main class="prose py-8 lg:max-w-none">
     <UContainer class="mt-4">
-      <UButton size="xl" to="/blog" icon="i-heroicons-solid-arrow-left" class="no-underline"> Back to Blog </UButton>
+      <UButton size="xl" to="/blog" icon="i-heroicons-arrow-left" label="Back to Blog" class="no-underline" />
 
       <!-- Post content -->
       <div

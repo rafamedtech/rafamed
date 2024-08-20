@@ -24,7 +24,7 @@ const { title, type = 'column', columns, more } = defineProps<Props>();
       <slot />
     </section>
     <UButton v-if="more" :to="more" size="xl" trailing variant="ghost" icon="i-heroicons-arrow-right">
-      See more
+      Explore more
     </UButton>
   </section>
 </template>

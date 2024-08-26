@@ -10,9 +10,17 @@
         <p class="text-lg mt-4">You just don't know it yet</p>
 
         <div class="flex gap-2 justify-center lg:justify-start pt-8">
-          <UButton size="xl" icon="i-heroicons-rocket-launch">Go to blog</UButton>
-          <UButton color="gray" variant="outline" size="xl" icon="i-heroicons-document-arrow-down"
+          <UButton size="xl" icon="i-heroicons-rocket-launch" trailing to="/blog">Take me there</UButton>
+          <!-- <UButton color="gray" variant="outline" size="xl" icon="i-heroicons-document-arrow-down"
             >Explore templates</UButton
+          > -->
+          <UButton
+            color="gray"
+            variant="outline"
+            size="xl"
+            icon="i-heroicons-chat-bubble-bottom-center-text-16-solid"
+            trailing
+            >Get in touch</UButton
           >
         </div>
       </div>

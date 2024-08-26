@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-// const { templates } = await useTemplate();
-
 useSeoMeta({
   title: 'Contact',
   description: "Let's work together",

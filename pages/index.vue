@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { latestPosts } = await usePost();
 
-const { latestTemplates } = await useTemplate();
+// const { latestTemplates } = await useTemplate();
 
 useSeoMeta({
   title: 'Rafamed - Home',

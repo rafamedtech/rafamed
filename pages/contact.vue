@@ -1,33 +1,34 @@
-<script setup>
-useHead({
-  title: 'Contact - Rafamed',
-  meta: [
-    {
-      name: 'description',
-      content: 'Contact me',
-    },
-  ],
-});
+<script lang="ts" setup>
+// const { templates } = await useTemplate();
 
-definePageMeta({
-  pageTransition: {
-    name: 'fade',
-    mode: 'out-in',
-  },
+useSeoMeta({
+  title: 'Contact',
+  description: "Let's work together",
 });
 </script>
 
 <template>
-  <section class="hero-pattern">
-    <div class="container mx-auto min-h-[90vh] px-5 pt-40 pb-24">
-      <h2 class="pb-4 text-center text-3xl font-medium text-secondary sm:text-4xl">Let's work together!</h2>
+  <section>
+    <UContainer class="mx-auto pt-12 pb-24">
+      <PageHeading title="Contact" description="You can find me on these places" />
 
-      <div class="m-4 flex flex-col items-center justify-evenly gap-8 py-6 md:flex-row">
-        <figure class="md:w-1/3">
-          <!-- <img src="@/assets/image/contact.png" alt="" /> -->
-        </figure>
-        <ContactForm class="md:w-2/5" />
-      </div>
-    </div>
+      <section class="pt-12 pb-6 min-h-[50vh] max-w-lg mx-auto grid gap-4">
+        <UCard>
+          <template #header>
+            <h3 class="text-primary font-bold">Email</h3>
+          </template>
+
+          <!-- Create a button with a mailto -->
+          <NuxtLink to="mailto:rafa.ravg@gmail.com">rafamed.tech@gmail.com</NuxtLink>
+        </UCard>
+        <UCard>
+          <template #header>
+            <h3 class="text-primary font-bold">Twitter / X</h3>
+          </template>
+
+          <NuxtLink to="https://x.com/rafamed_dev" target="_blank">@rafamed_dev</NuxtLink>
+        </UCard>
+      </section>
+    </UContainer>
   </section>
 </template>

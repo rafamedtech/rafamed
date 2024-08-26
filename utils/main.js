@@ -6,9 +6,9 @@ export const avatar = 'https://res.cloudinary.com/rafamed-dev/image/upload/v1717
 
 export const navLinks = [
   {
-    label: 'Templates',
-    icon: 'i-heroicons-briefcase',
-    to: '/templates',
+    label: 'Home',
+    icon: 'i-heroicons-home-solid',
+    to: '/',
   },
   {
     label: 'Blog',
@@ -26,12 +26,12 @@ export const socialLinks = [
   {
     label: 'GitHub',
     icon: 'hugeicons:github-01',
-    url: '',
+    url: 'https://github.com/rafamedtech',
   },
   {
     label: 'Twitter',
     icon: 'hugeicons:new-twitter',
-    url: '',
+    url: 'https://x.com/rafamed_dev',
   },
 ];
 

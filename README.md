@@ -2,6 +2,7 @@
 
 ## TODO
 
-[] - Fix contact button on index page
+[x] - Fix contact button on index page
 [x] - Add metadata on index page
-[] - Finish templates page
+[x] - Add contact info
+[] - Add new favicon

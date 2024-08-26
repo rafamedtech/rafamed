@@ -15,5 +15,10 @@
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
     "nuxt": "^3.12.4"
+  },
+  "devDependencies": {
+    "@iconify-json/hugeicons": "^1.1.1",
+    "@iconify-json/logos": "^1.1.44",
+    "@iconify-json/simple-icons": "^1.1.114"
   }
 }

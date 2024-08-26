@@ -6,7 +6,7 @@ interface Props {
 }
 const { template } = defineProps<Props>();
 
-const { title, description, source, demo, stack, images } = toRefs(template);
+const { title, description, source, demo, stack, images } = template;
 </script>
 
 <template>
@@ -15,7 +15,7 @@ const { title, description, source, demo, stack, images } = toRefs(template);
       <h3 class="font-bold">{{ title }}</h3>
     </template>
 
-    <section class="flex flex-col gap-4">
+    <section class="flex flex-col gap-4 p-8">
       <img :src="images[0]" alt="" class="rounded-lg" />
       <p>{{ description }}</p>
       <section class="flex justify-center gap-4">

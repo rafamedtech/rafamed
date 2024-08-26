@@ -5,7 +5,7 @@ const { stack } = defineProps<{
   stack: Stack;
 }>();
 
-const { title, icon } = toRefs(stack);
+const { title, icon } = stack;
 </script>
 
 <template>

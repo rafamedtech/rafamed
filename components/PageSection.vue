@@ -1,26 +1,16 @@
 <script setup lang="ts">
 interface Props {
   title: string;
-  type?: 'column' | 'grid';
-  columns?: 1 | 2 | 3 | 4;
+  columns?: number;
   more?: string;
 }
-const { title, type = 'column', columns, more } = defineProps<Props>();
+const { title, columns = 1, more = '/' } = defineProps<Props>();
 </script>
 
 <template>
   <section class="py-8 lg:py-16 flex flex-col items-center">
     <h2 class="text-3xl font-bold lg:text-5xl text-primary text-center">{{ title }}</h2>
-    <section
-      class="py-8"
-      :class="{
-        'max-w-4xl flex flex-col gap-4': type === 'column',
-        'grid gap-4': type === 'grid',
-        'grid-cols-4': columns === 4,
-        'grid-cols-3': columns === 3,
-        'grid-cols-2': columns === 2,
-      }"
-    >
+    <section class="py-8 container-columns grid gap-4 max-w-4xl">
       <slot />
     </section>
     <UButton v-if="more" :to="more" size="xl" trailing variant="ghost" icon="i-heroicons-arrow-right">
@@ -28,3 +18,9 @@ const { title, type = 'column', columns, more } = defineProps<Props>();
     </UButton>
   </section>
 </template>
+
+<style scoped>
+.container-columns {
+  grid-template-columns: repeat(v-bind(columns), 1fr);
+}
+</style>

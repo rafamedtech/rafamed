@@ -26,27 +26,27 @@ useSeoMeta({
       </PageSection>
 
       <!-- Stack -->
-      <PageSection title="This is the stack I use" type="grid" :columns="3">
+      <PageSection title="This is the stack I use" :columns="3">
         <StackCard v-for="stack in techStack" :key="stack.id" :stack="stack" />
       </PageSection>
 
       <!-- Blog -->
-      <PageSection title="Latest blogposts" more="/blog" type="column">
+      <PageSection title="Latest blogposts" more="/blog">
         <PostCard v-for="post in latestPosts" :key="post._id" :post="post" />
       </PageSection>
 
       <!-- Templates -->
-      <PageSection title="Latest templates" more="/templates" type="grid" :columns="3">
+      <!-- <PageSection title="Latest templates" more="/templates" :columns="3">
         <TemplateCard v-for="template in latestTemplates" :key="template.id" :template="template" />
-      </PageSection>
+      </PageSection> -->
 
       <!-- Contact -->
-      <PageSection title="Get in touch" type="column">
+      <PageSection title="Get in touch">
         <p class="text-lg">
           I’m always open to new projects and collaborations. Let’s work together to create something amazing.
         </p>
         <div class="flex justify-center pt-4">
-          <UButton size="xl" icon="i-heroicons-rocket-launch"> Contact me </UButton>
+          <UButton size="xl" icon="i-heroicons-rocket-launch" to="/contact"> Contact me </UButton>
         </div>
       </PageSection>
     </UContainer>

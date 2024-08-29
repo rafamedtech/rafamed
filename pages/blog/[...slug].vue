@@ -4,8 +4,8 @@ const { similarPosts } = await usePost();
 </script>
 
 <template>
-  <main class="prose py-8 lg:max-w-none">
-    <UContainer class="mt-4">
+  <main class="py-8 lg:max-w-none">
+    <UContainer class="mt-4 prose">
       <UButton size="xl" to="/blog" icon="i-heroicons-arrow-left" label="Back to Blog" class="no-underline" />
 
       <!-- Post content -->
@@ -16,6 +16,10 @@ const { similarPosts } = await usePost();
           <template v-slot="{ doc }">
             <img :src="doc.img" alt="" class="mx-auto rounded-2xl shadow" :class="{ 'md:h-[500px]': doc.img }" />
             <h1>{{ doc.title }}</h1>
+
+            <section v-if="doc.tags" class="flex gap-4">
+              <span v-for="tag in doc.tags" class="text-yellow-500">#{{ tag }}</span>
+            </section>
 
             <ContentRendererMarkdown :value="doc" />
           </template>
@@ -39,7 +43,7 @@ const { similarPosts } = await usePost();
       <section v-if="similarPosts?.length" class="lg:px-32">
         <h2 class="text-center text-3xl font-medium text-primary sm:text-4xl">Related posts</h2>
 
-        <section class="grid gap-4">
+        <section class="grid gap-4 pt-8">
           <PostCard v-for="post in similarPosts" :post="post" :key="post._id" />
         </section>
       </section>
